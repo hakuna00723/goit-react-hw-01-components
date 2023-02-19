@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export const Statistics = ({ title, stats }) => {
+export const Statistics = ({ title = 'Upload stats', stats }) => {
   return (
     <section>
       <h2>{title}</h2>
