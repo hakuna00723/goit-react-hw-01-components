@@ -6,11 +6,11 @@ export const Statistics = ({ title = 'Upload stats', stats }) => {
       <h2>{title}</h2>
 
       <ul>
-        {stats.map(el => {
+        {stats.map(({ id, label, percentage }) => {
           return (
-            <li key={el.id}>
-              <span>{el.label}</span>
-              <span> {el.percentage}%</span>
+            <li key={id}>
+              <span>{label}</span>
+              <span> {percentage}%</span>
             </li>
           );
         })}
@@ -21,9 +21,7 @@ export const Statistics = ({ title = 'Upload stats', stats }) => {
 
 Statistics.propTypes = {
   title: PropTypes.string.isRequired,
-  stats: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-    percentage: PropTypes.number.isRequired,
-  }).isRequired,
+  id: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  percentage: PropTypes.number.isRequired,
 };
