@@ -10,7 +10,7 @@ import {
 export const Statistics = ({ title = 'Upload stats', stats }) => {
   return (
     <StatisticsBox>
-      <StatisticsTitle>{title}</StatisticsTitle>
+    {tittle && <StatisticsTitle>{title}</StatisticsTitle>}
 
       <StatisticsList>
         {stats.map(({ id, label, percentage }) => {
